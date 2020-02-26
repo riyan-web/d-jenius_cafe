@@ -6,11 +6,11 @@
                         <div class="col-xl-9 col-md-9 col-md-12">
                             <div class="slider_text text-center">
                                 <div class="deal_text">
-                                    <span>Big Deal</span>
+                                    <span><a href='ngawur.php'>Pesan</a></span>
                                 </div>
-                                <h3>Percobaan <br>
-                                    cobain</h3>
-                                <h4>coba</h4>
+                                <h3>We <br>
+                                    Have Good</h3>
+                                <h4>Idea</h4>
                             </div>
                         </div>
                     </div>
