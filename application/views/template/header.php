@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title><?php echo $judul; ?></title>
+    <title>D-Jenius Cafe</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('public/img/favicon.png')?>">
+    <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('public/img/logo_cafe_2.jpeg')?>">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -30,4 +30,3 @@
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
-

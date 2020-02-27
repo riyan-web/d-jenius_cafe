@@ -14,7 +14,7 @@
                                             <li><a <?php if(isset($tab4)) echo 'class="active"'; ?> href="#">Laporan <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
                                                     <li><a href="blog.html">Laporan Laba rugi</a></li>
-                                                    <li><a href="single-blog.html">Laporan Keuangan</a></li>
+                                                    <li><a href="<?= base_url('lap_keuangan') ?>">Laporan Keuangan</a></li>
                                                     <li><a href="blog.html">Laporan Operasional</a></li>
                                                 </ul>
                                             </li>
@@ -25,7 +25,7 @@
                             <div class="col-xl-2 col-lg-2">
                                 <div class="logo-img">
                                     <a href="index.html">
-                                        <img src="img/logo.png" alt="">
+                                    <img src="<?= base_url('public/img/logo_cafe_2.jpeg')?>" alt="">
                                     </a>
                                 </div>
                             </div>
