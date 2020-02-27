@@ -14,7 +14,7 @@
                               <div class="col-lg-12">
                                   <div class="panel-body">
                                       <div class="table-responsive">
-                                          <table style="background-color: transparant;" class="table table-bordered table-hover " id="tabel">
+                                          <table style="background-color: yellow;" class="table table-bordered table-hover " id="tabel">
                                               <tr>
                                                   <th><h3 style="color: blue;">Modal</h3><a href="history_modal.php" class="pull-right btn btn-success btn-xs" title="semua data modal yang ditambahkan"><i class="fa fa-book"></i></a></th>
                                                   <td class="text-right"> <span class="text-left">
