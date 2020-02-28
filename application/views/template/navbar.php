@@ -10,21 +10,28 @@
                                         <ul id="navigation">
                                             <li><a <?php if(isset($tab1)) echo 'class="active"'; ?> href="<?= base_url() ?>">home</a></li>
                                             <li><a <?php if(isset($tab2)) echo 'class="active"'; ?> href="<?= base_url('barang') ?>">Daftar Menu</a></li>
-                                            <li><a <?php if(isset($tab3)) echo 'class="active"'; ?> href="about.html">Transaksi</a></li>
-                                            <li><a <?php if(isset($tab4)) echo 'class="active"'; ?> href="#">Laporan <i class="ti-angle-down"></i></a>
+                                            <li><a <?php if(isset($tab3)) echo 'class="active"'; ?> href="#">Tambah <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="<?= base_url('barang/tambahmenu') ?>">Tambah Menu</a></li>
+                                                    <li><a href="single-blog.html">Tambah Kategori</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a <?php if(isset($tab4)) echo 'class="active"'; ?> href="about.html">Transaksi</a></li>
+                                            <li><a <?php if(isset($tab5)) echo 'class="active"'; ?> href="#">Laporan <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
                                                     <li><a href="blog.html">Laporan Laba rugi</a></li>
-                                                    <li><a href="<?= base_url('lap_keuangan') ?>">Laporan Keuangan</a></li>
+                                                    <li><a href="single-blog.html">Laporan Keuangan</a></li>
                                                     <li><a href="blog.html">Laporan Operasional</a></li>
                                                 </ul>
                                             </li>
+                                            <li><a href="contact.html">Bantuan</a></li>
                                         </ul>
                                     </nav>
                                 </div>
                             </div>
                             <div class="col-xl-2 col-lg-2">
                                 <div class="logo-img">
-                                    <a href="index.html">
+                                    <a href="<?= base_url() ?>">
                                     <img src="<?= base_url('public/img/logo_cafe_2.jpeg')?>" alt="">
                                     </a>
                                 </div>

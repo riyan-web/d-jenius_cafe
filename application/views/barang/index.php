@@ -1,5 +1,5 @@
  <div class="bradcam_area breadcam_bg overlay">
-        <h3>Daftar Menu Djenius</h3>
+        <h3>Daftar Menu D`jenius</h3>
         <!-- <h6><b>Tambah Kategori</b></h6>
         <h6><b>Tambah Menu</b></h6> -->
     </div>
@@ -9,7 +9,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section_title text-center mb-80">
-                        <h3><?= $ktg['nama_kategori'] ?></h3><hr>
+                        <h3><?= $ktg['nama_kategori'] ?></h3>
+                        <hr>
                     </div>
                 </div>
             </div>
@@ -35,3 +36,4 @@
         </div> <br><br>
     <?php endforeach; ?>
     </div>
+    <?= $this->session->flashdata(); ?>
