@@ -7,6 +7,7 @@ class Barang extends CI_Controller {
 		parent::__construct();
 		$this->load->database();
 		$this->load->model('Barang_model');
+		$this->load->model('Keuangan_model');
 		$this->load->library('form_validation');
 	}
 	public function index()
@@ -48,7 +49,7 @@ class Barang extends CI_Controller {
 		$data['tab5'] = true;
 		$data['judul'] = "Daftar Menu - D-jenius Cafe";
 		// define('SITE_NAME', 'Menu Barang');
-		$data['kategori'] = $this->Barang_model->getAllKategori();
+		$data['keuangan'] = $this->Keuangan_model->ambil_data()->result();
 		$this->load->view('template/header', $data);
 		$this->load->view('template/navbar', $data);
 		$this->load->view('laporan/lap_keuangan', $data);

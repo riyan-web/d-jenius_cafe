@@ -14,6 +14,7 @@
                               <div class="col-lg-12">
                                   <div class="panel-body">
                                       <div class="table-responsive">
+									  <?php foreach($keuangan as $u){ ?>
                                           <table style="background-color: yellow;" class="table table-bordered table-hover " id="tabel">
                                               <tr>
                                                   <th><h3 style="color: blue;">Modal</h3><a href="history_modal.php" class="pull-right btn btn-success btn-xs" title="semua data modal yang ditambahkan"><i class="fa fa-book"></i></a></th>
@@ -47,11 +48,13 @@
                                                   <th><h3 style="color: blue;">Inventaris</h3></th>
                                               </tr>
                                               <tr>
-                                        
                                                   <th><h3 style="color: blue;">Sisa Modal</h3></th>
+                                            
+                                                  <th><?php echo $u->sisa_modal ?></th>
                                               </tr>
 
                                           </table>
+										  <?php } ?>
 
                                           </div>
                                     </div>   
@@ -60,6 +63,3 @@
                         </div>
                 </div>   
             </div>
-       
-     
-      <!-- end page-wrapper -->
