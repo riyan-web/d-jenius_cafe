@@ -11,7 +11,7 @@
                     <div class="section_title text-center mb-80">
                         <h3><?= $ktg['nama_kategori'] ?></h3>
                         <hr>
-                    </div>
+                    </div> 
                 </div>
             </div>
             <div class="row">
@@ -36,4 +36,4 @@
         </div> <br><br>
     <?php endforeach; ?>
     </div>
-    <?= $this->session->flashdata(); ?>
+    <?php $this->session->flashdata(); ?>

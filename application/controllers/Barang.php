@@ -43,6 +43,17 @@ class Barang extends CI_Controller {
 		}
 		
 	}
+	public function lap_keuangan()
+	{
+		$data['tab5'] = true;
+		$data['judul'] = "Daftar Menu - D-jenius Cafe";
+		// define('SITE_NAME', 'Menu Barang');
+		$data['kategori'] = $this->Barang_model->getAllKategori();
+		$this->load->view('template/header', $data);
+		$this->load->view('template/navbar', $data);
+		$this->load->view('laporan/lap_keuangan', $data);
+		$this->load->view('template/footer');
+	}
 	public function hapus($id)
 	{
 		$this->Barang_model->hapusDataBarang($id);
