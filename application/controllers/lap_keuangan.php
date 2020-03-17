@@ -8,7 +8,7 @@ class Lap_keuangan extends CI_Controller {
 		// $this->load->database();
 		// $this->load->model('keuangan_model');
 	}
-	public function index()
+	public function index() 
 	{	$dat['nama'] ="malasngoding";
 		$data['tb_keuangan'] = $this->keuangan_model->ambil_data()->result();
 		$this->load->view('template/header', $data);

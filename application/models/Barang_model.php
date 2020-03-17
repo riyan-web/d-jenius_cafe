@@ -10,7 +10,7 @@ class Barang_model extends CI_model {
 	}
 
 
-	public function getAllKategori()
+	public function getAllKategori() 
 	{
 		return $this->db->get('tb_kategori')->result_array();
 	}

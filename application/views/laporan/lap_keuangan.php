@@ -9,13 +9,13 @@
                <!--page header-->
               <div class="col-lg-12">
                 <div align="center">
-                  <a style="margin-bottom:10px" href="lap_keuangan.php" class="btn btn-danger btn-xs pull-left"><b><span class='fa fa-print'></span> Cetak PDF</b></a>
+                  <a style="margin-bottom:10px" href="lap_keuangan.php" class="btn btn-default btn-xs pull-left"><b><span class='fa fa-print'></span> Cetak PDF</b></a>
                           <div class="row">
                               <div class="col-lg-12">
                                   <div class="panel-body">
                                       <div class="table-responsive">
 									  <?php foreach($keuangan as $u){ ?>
-                                          <table style="background-color: yellow;" class="table table-bordered table-hover " id="tabel">
+                                          <table style="background-color: default;" class="table table-bordered table-hover " id="tabel">
                                               <tr>
                                                   <th><h3 style="color: blue;">Modal</h3><a href="history_modal.php" class="pull-right btn btn-success btn-xs" title="semua data modal yang ditambahkan"><i class="fa fa-book"></i></a></th>
                                                   <td class="text-right"> <span class="text-left">
@@ -53,7 +53,7 @@
                                                   <th><?php echo $u->sisa_modal ?></th>
                                               </tr>
 
-                                          </table>
+                                          </table> 
 										  <?php } ?>
 
                                           </div>

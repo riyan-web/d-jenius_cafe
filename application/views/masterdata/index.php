@@ -1,7 +1,7 @@
 <div class="bradcam_area breadcam_bg overlay">
         <h3>Daftar Menu D`jenius</h3>
-        <!-- <h6><b>Tambah Kategori</b></h6>
-        <h6><b>Tambah Menu</b></h6> -->
+        <h6><b>Tambah Kategori</b></h6>
+        <h6><b>Tambah Menu</b></h6> 
 </div>
     <div class="best_burgers_area">
         <div class="container">

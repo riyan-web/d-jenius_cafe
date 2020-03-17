@@ -5,7 +5,7 @@
     </div>
     <div class="best_burgers_area">
     <?php foreach ($kategori as $ktg) : ?>
-        <div class="container">
+        <div class="container"> 
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section_title text-center mb-80">
@@ -21,12 +21,12 @@
                 <div class="col-xl-6 col-md-6 col-lg-6">
                     <div class="single_delicious d-flex align-items-center">
                         <div class="thumb">
-                            <img src="<?= base_url('public/img/burger/1.png')?>" alt="">
+                            <img src="<?= base_url('public/img/'.$barang['foto'])?>" alt="">
                         </div>
                         <div class="info">
                             <h3><?= $barang['nama_barang'] ?></h3>
-                            <p>Great way to make your business appear trust and relevant.</p>
-                            <span>$5</span>
+                            <p><?= $barang['deskripsi']?></p>
+                            <span><?php echo "Rp ".$barang['harga'];?> </span>
                         </div>
                     </div>
                 </div >

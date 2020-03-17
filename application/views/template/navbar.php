@@ -24,7 +24,7 @@
                                                     <li><a href="blog.html">Laporan Operasional</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="contact.html">Operasional</a></li>
+                                            <li><a <?php if(isset($tab6)) echo 'class="active"'; ?> href="<?=base_url('operasional')?>">Operasional</a></li>
                                         </ul>
                                     </nav>
                                 </div>
