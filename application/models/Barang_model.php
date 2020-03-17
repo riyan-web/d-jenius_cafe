@@ -40,4 +40,13 @@ class Barang_model extends CI_model {
 		$this->db->where('kd_barang', $id);
 		$this->db->delete($this->_table);
 	}
+
+	public function cek_kode($kd_barang)
+	{
+		return $this->db
+			->select('kd_barang')
+			->where('kd_barang', $kd_barang)
+			->limit(1)
+			->get($this->_table);	
+	}
 }

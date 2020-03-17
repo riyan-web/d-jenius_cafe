@@ -13,10 +13,10 @@
                                             <li><a <?php if(isset($tab3)) echo 'class="active"'; ?> href="#">Master Data<i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
                                                     <li><a href="<?= base_url('Master_data') ?>">Tambah Menu</a></li>
-                                                    <li><a href="single-blog.html">Tambah Kategori</a></li>
+                                                    <li><a href="<?= base_url('kategori') ?>">Tambah Kategori</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a <?php if(isset($tab4)) echo 'class="active"'; ?> href="about.html">Transaksi</a></li>
+                                            <li><a <?php if(isset($tab4)) echo 'class="active"'; ?> href="<?= base_url('transaksi') ?>">Transaksi</a></li>
                                             <li><a <?php if(isset($tab5)) echo 'class="active"'; ?> href="#">Laporan <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
                                                     <li><a href="blog.html">Laporan Laba rugi</a></li>

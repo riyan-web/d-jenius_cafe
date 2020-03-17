@@ -62,4 +62,5 @@ class Barang extends CI_Controller {
 		redirect('Barang/tambahmenu');
 	}
 
+	
 }
