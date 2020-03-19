@@ -413,9 +413,31 @@
     }
 
 </script>
+<style>
+    .modal-backdrop {
+    z-index: 1040 !important;
+    }
+    .modal-dialog {
+        margin: 2px auto;
+        z-index: 1100 !important;
+    }
+    /*.modal-backdrop {
+     bug fix - no overlay     
+    display: none;    
+    }*/
+</style>
+<script>
+    showEditor() {
+  $("#ModalGue").modal("show");
+  $("#ModalGue").appendTo("body");
+}
 
+ngOnDestroy(){
+  $("body>#ModalGue").remove();
+}
+</script>
 <div class="modal" id="ModalGue" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog" style="z-index: 1100;">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class='fa fa-times-circle'></i></button>
@@ -433,4 +455,6 @@
                 $('#ModalHeader, #ModalContent, #ModalFooter').html('');
            }, 500);
         });
+
+
         </script>
