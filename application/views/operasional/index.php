@@ -38,9 +38,12 @@
                                 <th><?php echo $operasional->jumlah?></th>
                                 <th><?php echo $operasional->tanggal?></th>
                                 <th><?php echo $operasional->tipe?></th>
-                                <th></th>
+                                <th>
+                                    <button class="btn btn-primary"><?php echo anchor('operasional/edit_data','Edit');?></button>
+                                    <button class="btn btn-danger" onclick="reload_table_menu()"><i class="glyphicon glyphicon-trash">Hapus</i></button>
+                                </th>
                             </tr>   
-                            <?php $no++ ?>
+                            <?php $no++ ?> 
                         <?php } ?>
                         </tbody>
                     </table>
