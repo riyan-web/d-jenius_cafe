@@ -10,20 +10,9 @@ class Barang extends CI_Controller {
 		$this->load->model('Keuangan_model');
 		$this->load->library('form_validation');
 	}
-	public function index()
-	{
-		$data['tab2'] = true;
-		$data['judul'] = "Daftar Menu - D-jenius Cafe"; 
-		// define('SITE_NAME', 'Menu Barang');
-		$data['kategori'] = $this->Barang_model->getAllKategori();
-		$this->load->view('template/header', $data);
-		$this->load->view('template/navbar', $data);
-		$this->load->view('barang/index', $data);
-		$this->load->view('template/footer');
-	}
 	public function tambahMenu()
 	{
-		$data['tab3'] = true;
+		$data['tab2'] = true;
 		$data['judul'] = "Tambah Menu Baru - D-jenius Cafe";
 		$data['kategori'] = $this->Barang_model->getAllKategori();
 		$data['barang'] = $this->Barang_model->getAllBarang();
@@ -43,17 +32,6 @@ class Barang extends CI_Controller {
 			redirect('Barang/tambahmenu');
 		}
 		
-	}
-	public function lap_keuangan()
-	{
-		$data['tab5'] = true;
-		$data['judul'] = "Daftar Menu - D-jenius Cafe";
-		// define('SITE_NAME', 'Menu Barang');
-		$data['keuangan'] = $this->Keuangan_model->ambil_data()->result();
-		$this->load->view('template/header', $data);
-		$this->load->view('template/navbar', $data);
-		$this->load->view('laporan/lap_keuangan', $data);
-		$this->load->view('template/footer');
 	}
 	public function hapus($id)
 	{

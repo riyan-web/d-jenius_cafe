@@ -12,7 +12,7 @@ class Operasional extends CI_Controller {
 
 	public function index()
 	{
-		$data['tab6'] = true;
+		$data['tab4'] = true;
         $data['judul'] = "Data Operasional";
         $data['tb_operasional'] = $this->operasional_model->getOperasional()->result();
 		$this->load->view('template/header', $data);
@@ -23,7 +23,7 @@ class Operasional extends CI_Controller {
     
     public function tambah_data()
     {
-        $data['tab6'] = true;
+        $data['tab4'] = true;
         $data['judul'] ="Tambah Data Operasional";
         $this->load->view('template/header', $data);
 		$this->load->view('template/navbar', $data);

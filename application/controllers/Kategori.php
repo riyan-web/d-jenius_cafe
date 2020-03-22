@@ -10,7 +10,7 @@ class Kategori extends CI_Controller {
 	}
 
 	public function index(){ 
-		$data['tab3'] = true;
+		$data['tab2'] = true;
 		$data['judul'] = "Master Data Kategori - D`coba";
 		$this->load->view('template/header', $data);
 		$this->load->view('template/navbar', $data);
