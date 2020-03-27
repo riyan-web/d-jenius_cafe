@@ -512,7 +512,7 @@ h3 {
 
 /* line 2, ../../Arafath/CL/December/229. Restaurant (Burger)/HTML/scss/_section_title.scss */
 .section_title span {
-  color: #F2C64D;
+  color: rgb(88, 36, 2);
   font-size: 30px;
   font-weight: 400;
   margin-bottom: 18px;
@@ -521,10 +521,10 @@ h3 {
 }
 
 /* line 10, ../../Arafath/CL/December/229. Restaurant (Burger)/HTML/scss/_section_title.scss */
-.section_title h3 {
+.section_title h2 {
   font-size: 50px;
   font-weight: 700;
-  color: #1A0D01;
+  color: rgb(18, 32, 1);
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
 }

@@ -1,13 +1,12 @@
 <div class="bradcam_area breadcam_bg overlay">
-        <h3>Data Operasional Cafe</h3>
-       
+        <h3>Data Operasional Cafe</h3>      
 </div>
     <div class="best_burgers_area">
         <div class="container">
             <div class="col-lg-12">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="section_title text-center mb-80">
+                        <div class="section_title text-center mb-10">
                             <h3>Daftar Operasional Cafe</h3>
                             <button class="btn btn-success fa fa-plus-square"><?php echo anchor('operasional/tambah_data','Tambah Data');?></button>
                             <button class="btn btn-default" onclick="reload_table_menu()"><i class="fa fa-refresh"></i> Reload</button>
@@ -38,9 +37,9 @@
                                 <th><?php echo $operasional->jumlah?></th>
                                 <th><?php echo $operasional->tanggal?></th>
                                 <th><?php echo $operasional->tipe?></th>
-                                <th>
-                                    <button class="btn btn-primary"><?php echo anchor('operasional/edit_data','Edit');?></button>
-                                    <button class="btn btn-danger" onclick="reload_table_menu()"><i class="glyphicon glyphicon-trash">Hapus</i></button>
+                                <th> 
+                                    <button class="btn btn-primary"><?php echo anchor('operasional/edit_data/'.$operasional->kd_operasional,'Edit');?></button>
+                                    <button class="btn btn-danger"><?php echo anchor('operasional/hapus/'.$operasional->kd_operasional,'Hapus');?></button>
                                 </th>
                             </tr>   
                             <?php $no++ ?> 
