@@ -1,18 +1,27 @@
+<style>
+  .modal {
+  background:url(<?= base_url('public/img/BlackTransparentBackground.png') ?>);
+}
+.modal-backdrop {
+  display: none;
+  background-color: #000000;
+}
+</style>
+
  <div class="bradcam_area breadcam_bg overlay">
         <h3>Transaksi D`jenius</h3>
         <!-- <h6><b>Tambah Kategori</b></h6>
         <h6><b>Tambah Menu</b></h6> -->
 </div>
 <div class="container-fluid">
-  <div class="panel panel-default">
-    <div class="panel-body">
+  <div class="card card-default">
+    <div class="card-body">
     <div class="row">
       <div class="col-lg-3">
-        <div class="panel-primary">
-          <div class="panel-heading">
+          <div class="card-heading bg-primary">
               <i class="glyphicon glyphicon-road"></i> Informasi Nota
           </div>
-            <div class="panel-body">
+            <div class="card card-body">
                 <div class="form-group">
                   <label>No. Nota  :</label>
                   <input style="width: 160px;" name="kd_transaksi" id="kd_transaksi" readonly value="<?= $nota ?>" type="text">
@@ -22,7 +31,6 @@
                   <input style="width: 160px;" name="tanggal" id="tanggal" type="text" readonly value="<?= date("Y/m/d") ?>" required>
                 </div>
             </div>
-        </div>
       </div>
       <div class="col-lg-9">
         <div class="row">
@@ -32,7 +40,7 @@
               <a href="<?= site_url('transaksi'); ?>" class='pull-right'><i class='fa fa-refresh fa-fw'></i> Refresh Halaman</a>
               <table class='table table-bordered' id='TabelTransaksi'>
               <thead>
-                <tr>
+                <tr bgcolor="green">
                   <th style='width:35px;'>#</th>
                   <th style='width:210px;'>Kode Barang</th>
                   <th>Nama Menu</th>

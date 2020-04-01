@@ -14,6 +14,7 @@ class Master_data extends CI_Controller {
 		$this->load->view('template/header', $data);
 		$this->load->view('template/navbar', $data);
 		$this->load->view('masterdata/index', $data);
+		$this->load->view('_js/js_menu');
 		$this->load->view('_modal/modal_menu');
 		$this->load->view('template/footer');
 	}

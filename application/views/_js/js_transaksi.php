@@ -18,7 +18,7 @@
         var Baris = "<tr>";
             Baris += "<td>"+Nomor+"</td>";
             Baris += "<td>";
-                Baris += "<input type='text' class='form-control' name='kd_barang[]' id='pencarian_kode' placeholder='Ketik Kode / Nama Menu'>";
+                Baris += "<input type='text' style='height :30px;' class='form-control' name='kd_barang[]' id='pencarian_kode' placeholder='Ketik Kode / Nama Menu'>";
                 Baris += "<div id='hasil_pencarian'></div>";
             Baris += "</td>";
             Baris += "<td></td>";
@@ -26,12 +26,12 @@
                 Baris += "<input type='hidden' name='harga_satuan[]'>";
                 Baris += "<span></span>";
             Baris += "</td>";
-            Baris += "<td><input type='text' class='form-control' id='jumlah_beli' name='jumlah_beli[]' onkeypress='return isNumberKey(event)' disabled></td>";
+            Baris += "<td><input type='text' class='form-control' style='height:30px;' id='jumlah_beli' name='jumlah_beli[]' onkeypress='return isNumberKey(event)' disabled></td>";
             Baris += "<td>";
                 Baris += "<input type='hidden' name='sub_total[]'>";
                 Baris += "<span></span>";
             Baris += "</td>";
-            Baris += "<td><button class='btn btn-default' id='HapusBaris'><i class='fa fa-times' style='color:red;'></i></button></td>";
+            Baris += "<td><button class='btn btn-default' style='height :25px; width :25px;'  id='HapusBaris'><i class='fa fa-times' style='color:red;'></i></button></td>";
             Baris += "</tr>";
 
         $('#TabelTransaksi tbody').append(Baris);
@@ -353,6 +353,7 @@
                 $('#ModalContent').html('Harap masukan Total Bayar');
                 $('#ModalFooter').html("<button type='button' class='btn btn-primary' data-dismiss='modal' autofocus>Ok</button>");
                 $('#ModalGue').modal('show');
+                $("#ModalGue").css("z-index", "1500");
             }
         }
         else
@@ -363,6 +364,7 @@
             $('#ModalContent').html('Harap pilih barang terlebih dahulu');
             $('#ModalFooter').html("<button type='button' class='btn btn-primary' data-dismiss='modal' autofocus>Ok</button>");
             $('#ModalGue').modal('show');
+            $("#ModalGue").css("z-index", "1500");
 
         }
     }
@@ -428,6 +430,21 @@
         </div>
         
         <script>
+              var checkeventcount = 1,prevTarget;
+    $('.modal').on('show.bs.modal', function (e) {
+        if(typeof prevTarget == 'undefined' || (checkeventcount==1 && e.target!=prevTarget))
+        {  
+          prevTarget = e.target;
+          checkeventcount++;
+          e.preventDefault();
+          $(e.target).appendTo('body').modal('show');
+        }
+        else if(e.target==prevTarget && checkeventcount==2)
+        {
+          checkeventcount--;
+        }
+     });
+        // $('#ModalGue').appendTo("body").modal('show');
         $('#ModalGue').on('hide.bs.modal', function () {
            setTimeout(function(){ 
                 $('#ModalHeader, #ModalContent, #ModalFooter').html('');
