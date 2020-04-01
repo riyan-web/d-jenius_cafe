@@ -1,18 +1,15 @@
- <div class="bradcam_area breadcam_bg overlay">
-        <h3>Transaksi D`jenius</h3>
-        <!-- <h6><b>Tambah Kategori</b></h6>
-        <h6><b>Tambah Menu</b></h6> -->
-</div>
+  
+<br><br><br><br>
 <div class="container-fluid">
   <div class="panel panel-default">
     <div class="panel-body">
     <div class="row">
       <div class="col-lg-3">
-        <div class="panel-primary">
+        <div class="panel panel-primary">
           <div class="panel-heading">
               <i class="glyphicon glyphicon-road"></i> Informasi Nota
           </div>
-            <div class="panel-body">
+            <div class="panel-body" bgcolor="yellow">
                 <div class="form-group">
                   <label>No. Nota  :</label>
                   <input style="width: 160px;" name="kd_transaksi" id="kd_transaksi" readonly value="<?= $nota ?>" type="text">
@@ -32,7 +29,7 @@
               <a href="<?= site_url('transaksi'); ?>" class='pull-right'><i class='fa fa-refresh fa-fw'></i> Refresh Halaman</a>
               <table class='table table-bordered' id='TabelTransaksi'>
               <thead>
-                <tr>
+                <tr bgcolor="brown">
                   <th style='width:35px;'>#</th>
                   <th style='width:210px;'>Kode Barang</th>
                   <th>Nama Menu</th>
