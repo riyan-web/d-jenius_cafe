@@ -2,12 +2,12 @@
         <h3>Data Operasional Cafe</h3>      
 </div>
     <div class="best_burgers_area">
-        <div class="container">
+        <div class="container"> 
             <div class="col-lg-12">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section_title text-center mb-10">
-                            <h3>Daftar Operasional Cafe</h3>
+                            <h2>Daftar Operasional Cafe</h2>
                             <button class="btn btn-success fa fa-plus-square"><?php echo anchor('operasional/tambah_data','Tambah Data');?></button>
                             <button class="btn btn-default" onclick="reload_table_menu()"><i class="fa fa-refresh"></i> Reload</button>
                         </div> 
@@ -17,7 +17,7 @@
                     <div class=" col-lg-12 col-md-12">
                     <table id="table_menu" class="table table-striped table-bordered" cellspacing="0">
                         <thead>
-                            <tr>
+                            <tr bgcolor="yellow" align="center">
                                 <th style="width: 30px;">No.</th>
                                 <th>Nama Operasional</th>
                                 <th>Deskripsi</th>
@@ -30,7 +30,7 @@
                         <tbody>
                         <?php $no= 1; ?>
                         <?php foreach($tb_operasional as $operasional) {?>
-                            <tr>
+                            <tr bgcolor="yellow">
                                 <th><?=$no ?> </th>
                                 <th><?php echo $operasional->nama_operasional?></th>
                                 <th><?php echo $operasional->deskripsi?></th>

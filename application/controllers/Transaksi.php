@@ -18,7 +18,7 @@ class Transaksi extends CI_Controller {
 		// $this->load->view('template/navbar', $data);
 		$this->load->view('transaksi/index');
 		$this->load->view('_js/js_transaksi');
-		$this->load->view('template/footer');
+		// $this->load->view('template/footer');
 	}
 
 	public function kode_barange()

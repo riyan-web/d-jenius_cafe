@@ -32,8 +32,9 @@
 						<tr>
 							<td class="section_title"><span>Tipe : </span></td>
 							<td>
-								<select name="tipe" class="form-control"  value="<?php echo $oper->kd_barang ?>" required>
-								   <option>operasional</option>
+								<select name="tipe" class="form-control" required>
+								<option value="<?php echo $oper->tipe ?>"><?php echo "---".$oper->tipe."---" ?></option>
+								   <option>operasional</option> 
 								   <option>inventaris</option>
                                 </select>
 							</td>

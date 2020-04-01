@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="<?= base_url('public/css/bootstrap.min.css')?>">
     <link rel="stylesheet" href="<?= base_url('public/datatables/css/dataTables.bootstrap.min.css')?>">
     <link rel="stylesheet" href="<?= base_url('public/css/owl.carousel.min.css')?>">
-    <link rel="stylesheet" href="<?= base_url('public/css/magnific-popup.css')?>">
+   
     <link rel="stylesheet" href="<?= base_url('public/css/font-awesome.min.css')?>">
     <link rel="stylesheet" href="<?= base_url('public/css/themify-icons.css')?>">
     <link rel="stylesheet" href="<?= base_url('public/css/nice-select.css')?>">
