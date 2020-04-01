@@ -15,7 +15,7 @@ class Transaksi extends CI_Controller {
 		$data['judul'] = "Halaman Transaksi - D`coba";
 		$data['nota'] = $this->transaksi->max_kode();
 		$this->load->view('template/header', $data);
-		// $this->load->view('template/navbar', $data);
+		$this->load->view('template/navbar', $data);
 		$this->load->view('transaksi/index');
 		$this->load->view('_js/js_transaksi');
 		// $this->load->view('template/footer');
