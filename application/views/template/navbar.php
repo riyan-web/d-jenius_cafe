@@ -19,6 +19,8 @@
                                                 <ul class="submenu">
                                                     <li><a href="<?= base_url('laporan/laporan_labarugi') ?>">Laporan Laba rugi</a></li>
                                                     <li><a href="<?= base_url('laporan/laporan_operasional') ?>">Laporan Operasional</a></li>
+                                                    <li><a href="<?= base_url('laporan/laporan_penjualan') ?>">Laporan Penjualan</a></li>
+                                                    <li><a href="<?= base_url('laporan/laporan_penjualan_minuman') ?>">Laporan Penjualan_minuman</a></li>
                                                     <li><a href="<?= base_url('laporan/laporan_keuangan') ?>">Laporan Keuangan</a></li>
                                                 </ul>
                                             </li>

@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Laporan_model extends CI_Model {
 	var $table = 'tb_keuangan';
+	var $table_penjualan = 'detail_jual';
 	var $table_trans = 'transaksi_jual';
 	var $table_oper = 'tb_operasional';
 	function __construct()
@@ -10,6 +11,12 @@ class Laporan_model extends CI_Model {
 		parent::__construct();
 		$this->load->database();
 	}
+
+	public function jumlah_terjual()
+    {
+    	$query = $this->db->query('select sum(jumlah) as jumlahnya from detail_jual group by kd_barang');
+		return $this->db->get($this->table_penjualan);
+    }
 
 	public function jumlah_modal()
 	{
@@ -24,7 +31,7 @@ class Laporan_model extends CI_Model {
 	public function jumlah_operasional()
 	{
 		$this->db->select_sum('jumlah');
-		return $this->db->get($this->table_oper)->row()->jumlah;
+		return $this->db->get($this->table_oper)->row()->jumlah; 
 	}
 	public function modal()
 	{

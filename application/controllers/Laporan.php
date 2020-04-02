@@ -34,6 +34,29 @@ class Laporan extends CI_Controller {
 		$this->load->view('_js/js_laporan');
 		$this->load->view('template/footer');
 	}
+	
+
+	public function laporan_penjualan()
+	{
+		$data['tab3']= true;
+		$data['judul'] = "Halaman Laporan - D`coba";
+		$data['jml_barang'] = $this->laporan->jumlah_terjual();
+		$this->load->view('template/header', $data);
+		$this->load->view('template/navbar', $data);
+		$this->load->view('laporan/penjualan', $data);
+		$this->load->view('template/footer');
+	}
+
+	public function laporan_penjualan_minuman()
+	{
+		$data['tab3']= true;
+		$data['judul'] = "Halaman Laporan - D`coba";
+		$this->load->view('template/header', $data);
+		$this->load->view('template/navbar', $data);
+		$this->load->view('laporan/penjualan_minuman', $data);
+		$this->load->view('template/footer');
+	}
+
 
 	public function laporan_labarugi()
 	{
