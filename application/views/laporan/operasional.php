@@ -17,11 +17,9 @@
 							</div>
 							<div class="panel-body">
 								<div class="row">
-								<div class="col-lg-2 mb-9 pull-right">
-									<button type='button' onclick="cetak_operasional()" class='btn btn-warning btn-block' id='CetakStruk'>
-									<i class='fa fa-print'></i> Cetak
-									</button>
-								</div>
+									<div class="col-lg-2 mb-9 pull-right">
+										<button type='button' onclick="cetak_operasional()" class='btn btn-warning btn-block' id='CetakStruk'><i class='fa fa-print'></i> Cetak</button>
+									</div>
 								<br>
 								<div class="row">
 									<div class="col-lg-12">

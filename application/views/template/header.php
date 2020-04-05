@@ -15,6 +15,7 @@
     <!-- CSS here -->
     <link rel="stylesheet" href="<?= base_url('public/css/bootstrap.min.css')?>">
     <link rel="stylesheet" href="<?= base_url('public/datatables/css/dataTables.bootstrap.min.css')?>">
+    <link rel="stylesheet" href="<?= base_url('public/datatables/css/jquery.dataTables.min.css')?>">
     <link rel="stylesheet" href="<?= base_url('public/css/owl.carousel.min.css')?>">
    
     <link rel="stylesheet" href="<?= base_url('public/css/font-awesome.min.css')?>">
