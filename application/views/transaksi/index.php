@@ -1,12 +1,4 @@
-<style>
-  .modal {
-  background:url(<?= base_url('public/img/BlackTransparentBackground.png') ?>);
-}
-.modal-backdrop {
-  display: none;
-  background-color: #000000;
-}
-</style>
+
 
  <div class="bradcam_area breadcam_bg overlay">
         <h3>Transaksi D`jenius</h3>

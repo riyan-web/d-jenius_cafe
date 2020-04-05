@@ -8,7 +8,7 @@ var base_url = '<?= base_url();?>';
 $(document).ready(function() {
 
     //datatables
-    table = $('#table').DataTable({ 
+    table = $('#table_menu').DataTable({ 
 
         "processing": true, //Feature control the processing indicator.
         "serverSide": true, //Feature control DataTables' server-side processing mode.
@@ -16,7 +16,7 @@ $(document).ready(function() {
 
         // Load data for the table's content from an Ajax source
         "ajax": {
-            "url": "<?= site_url('menu/menu_list')?>",
+            "url": "<?= site_url('master_data/menu_list')?>",
             "type": "POST"
         },
 
@@ -35,14 +35,14 @@ $(document).ready(function() {
     });
 
     //datepicker
-    $('.datepicker').datepicker({
-        autoclose: true,
-        format: "yyyy-mm-dd",
-        todayHighlight: true,
-        orientation: "top auto",
-        todayBtn: true,
-        todayHighlight: true,  
-    });
+    // $('.datepicker').datepicker({
+    //     autoclose: true,
+    //     format: "yyyy-mm-dd",
+    //     todayHighlight: true,
+    //     orientation: "top auto",
+    //     todayBtn: true,
+    //     todayHighlight: true,  
+    // });
 
     //set input/textarea/select event when change value, remove class error and remove text help block 
     $("input").change(function(){
@@ -86,7 +86,7 @@ function edit_menu(kd_barang)
 
     //Ajax Load data from ajax
     $.ajax({
-        url : "<?= site_url('menu/menu_edit')?>/" + kd_barang,
+        url : "<?= site_url('master_data/menu_edit')?>/" + kd_barang,
         type: "GET",
         dataType: "JSON",
         success: function(data)
@@ -137,9 +137,9 @@ function save()
     var url;
 
     if(save_method == 'add') {
-        url = "<?= site_url('menu/menu_add')?>";
+        url = "<?= site_url('master_data/menu_add')?>";
     } else {
-        url = "<?= site_url('menu/menu_update')?>";
+        url = "<?= site_url('master_data/menu_update')?>";
     }
 
     // ajax adding data to database
@@ -189,7 +189,7 @@ function delete_menu(kd_barang)
     {
         // ajax delete data to database
         $.ajax({
-            url : "<?= site_url('menu/delete_menu')?>/"+kd_barang,
+            url : "<?= site_url('master_data/delete_menu')?>/"+kd_barang,
             type: "POST",
             dataType: "JSON",
             success: function(data)

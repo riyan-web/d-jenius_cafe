@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+ 
 class Laporan_model extends CI_Model {
 	var $table = 'tb_keuangan';
 	var $table_penjualan = 'detail_jual';
@@ -14,8 +14,7 @@ class Laporan_model extends CI_Model {
 
 	public function jumlah_terjual()
     {
-    	$query = $this->db->query('select sum(jumlah) as jumlahnya from detail_jual group by kd_barang');
-		return $this->db->get($this->table_penjualan);
+    	return $this->db->query('SELECT tb_barang.nama_barang, sum(detail_jual.jumlah) as jumlah FROM detail_jual inner join tb_barang on tb_barang.kd_barang = detail_jual.kd_barang group by detail_jual.kd_barang')->result_array();
     }
 
 	public function jumlah_modal()

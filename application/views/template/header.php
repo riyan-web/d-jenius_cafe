@@ -57,7 +57,15 @@
 
     <script src="<?= base_url('public/js/main.js')?>"></script>
     
-
+<style>
+      .modal {
+      background:url(<?= base_url('public/img/BlackTransparentBackground.png') ?>);
+    }
+    .modal-backdrop {
+      display: none;
+      background-color: #000000;
+    }
+    </style>
     
 </head>
 
