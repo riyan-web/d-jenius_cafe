@@ -13,7 +13,7 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$data['tab1'] = true;
-		$data['judul'] = "D-jenius Cafe";
+		$data['judul'] = "D'jenius Cafe";
 		$data['kategori'] = $this->Barang_model->getAllKategori();
 		$this->load->view('template/header', $data);
 		$this->load->view('template/navbar', $data);

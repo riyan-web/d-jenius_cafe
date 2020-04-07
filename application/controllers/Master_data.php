@@ -9,7 +9,7 @@ class Master_data extends CI_Controller {
 
 	public function index(){
 		$data['tab2'] = true;
-		$data['judul'] = "Master Data Menu - D-jenius Cafe";
+		$data['judul'] = "Data Menu - D-jenius Cafe";
 		$data['kategori'] = $this->menu->get_kategori();
 		$this->load->view('template/header', $data);
 		$this->load->view('template/navbar', $data);

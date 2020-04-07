@@ -14,7 +14,7 @@ class Operasional extends CI_Controller {
 	public function index()
 	{
 		$data['tab4'] = true;
-        $data['judul'] = "Data Operasional";
+        $data['judul'] = "Data Operasional - D'jenius Cafe";
         $data['tb_operasional'] = $this->operasional_model->getOperasional()->result();
 		$this->load->view('template/header', $data);
 		$this->load->view('template/navbar', $data);

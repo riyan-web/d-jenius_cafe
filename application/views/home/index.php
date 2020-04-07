@@ -40,7 +40,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section_title text-center mb-80">
-                        <h3><?= $ktg['nama_kategori'] ?></h3>
+                        <h2><?= $ktg['nama_kategori'] ?></h2>
                         <hr>
                     </div> 
                 </div>

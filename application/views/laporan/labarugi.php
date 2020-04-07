@@ -1,5 +1,5 @@
 <div class="bradcam_area breadcam_bg overlay">
-        <h3>Laporan Keuangan</h3>
+        <h3>Laporan Laba rugi</h3>
        
 </div>
     <div class="best_burgers_area">
