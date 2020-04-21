@@ -11,7 +11,7 @@ class Operasional extends CI_Controller {
 		$this->load->helper('url');
     }
 
-	public function index()
+	public function index() 
 	{
 		$data['tab4'] = true;
         $data['judul'] = "Data Operasional - D'jenius Cafe";
