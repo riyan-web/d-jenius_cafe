@@ -5,6 +5,7 @@ class Barang extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct(); 
+		cek_akses();
 		$this->load->database();
 		$this->load->model('Barang_model');
 		$this->load->model('Keuangan_model');

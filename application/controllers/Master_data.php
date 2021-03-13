@@ -5,10 +5,11 @@ class Master_data extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		cek_akses();
 		$this->load->model('menu_model', 'menu');
 	}
 
-	public function index()
+	public function index() 
 	{
 		$data['tab2'] = true;
 		$data['judul'] = "Data Menu - D-jenius Cafe";
