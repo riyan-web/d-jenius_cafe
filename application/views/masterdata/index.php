@@ -1,7 +1,7 @@
 <div class="bradcam_area breadcam_bg overlay">
     <h3>Data Menu</h3>
 </div>
-<!-- <div class="best_burgers_area"> -->
+<!-- <div class="best_burgers_area">  wdhsdhss-->
 <div class="container-fluid">
     <div class="col-lg-12">
         <div class="row">
@@ -14,6 +14,7 @@
             </div>
         </div>
         <div class="row">
+
             <div class="offset-1 col-lg-12 col-md-8">
                 <div class="table-responsive">
                     <table id="table_menu" class="table table-striped table-bordered" cellspacing="0">
