@@ -12,7 +12,7 @@
                                     <li><a <?php if (isset($tab1)) echo 'class="active"'; ?> href="<?= base_url('home') ?>">Home</a></li>
                                     <li><a <?php if (isset($tab2)) echo 'class="active"'; ?> href="#">Master Data<i class="ti-angle-down"></i></a>
                                         <ul class="submenu">
-                                            <li><a href="<?= base_url('Master_data') ?>">Data Menu</a></li>
+                                            <li><a href="<?= base_url('Barang') ?>">Data Menu</a></li>
                                             <li><a href="<?= base_url('kategori') ?>">Data Kategori</a></li>
                                         </ul>
                                     </li>

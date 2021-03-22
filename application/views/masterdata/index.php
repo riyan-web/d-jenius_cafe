@@ -15,7 +15,7 @@
         </div>
         <div class="row">
 
-            <div class="offset-1 col-lg-12 col-md-8">
+            <div class="offset-1 col-lg-11 col-md-8">
                 <div class="table-responsive">
                     <table id="table_menu" class="table table-striped table-bordered" cellspacing="0">
                         <thead>
@@ -24,7 +24,6 @@
                                 <th>Nama Menu</th>
                                 <th>Harga Jual</th>
                                 <th>Kategori</th>
-                                <th>Foto</th>
                                 <th style="width:150px;">Action</th>
                             </tr>
                         </thead>

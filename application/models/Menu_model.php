@@ -16,7 +16,7 @@ class Menu_model extends CI_Model {
 
 	private function _get_datatables_query()
 	{
-		$this->db->select('tb_kategori.nama_kategori, tb_barang.nama_barang, tb_barang.harga, tb_barang.deskripsi, tb_barang.kd_barang, tb_barang.foto');
+		$this->db->select('tb_kategori.nama_kategori, tb_barang.nama_barang, tb_barang.harga, tb_barang.kd_barang');
 		$this->db->from($this->table);
 		$this->db->join('tb_kategori','tb_kategori.kd_kategori=tb_barang.kd_kategori');
 
@@ -87,7 +87,7 @@ class Menu_model extends CI_Model {
 
 	public function save($data)
 	{
-			$sql = "INSERT INTO tb_barang (kd_barang, nama_barang, harga, kd_kategori, deskripsi, foto) VALUES ('', '" .$data['nama_barang']. "', '" .$data['harga']. "', '" .$data['kd_kategori']."', '" .$data['deskripsi']. "', '" .$data['photo']. "')";
+			$sql = "INSERT INTO tb_barang (kd_barang, nama_barang, harga, kd_kategori) VALUES ('', '" .$data['nama_barang']. "', '" .$data['harga']. "', '" .$data['kd_kategori']."')";
 		return $this->db->query($sql);
 		// $this->db->insert($this->table, $data);
 		// return $this->db->insert_id();
@@ -95,7 +95,7 @@ class Menu_model extends CI_Model {
 
 	public function update($kd_barang, $data)
 	{	
-		$sql = "UPDATE tb_barang SET nama_barang = '". $data['nama_barang'] ."', harga = '". $data['harga'] ."', kd_kategori = '" .$data['kd_kategori']. "', deskripsi = '" .$data['deskripsi']. "', foto = '" .$data['photo']. "' WHERE kd_barang= '" .$kd_barang['kd_barang']. "'";
+		$sql = "UPDATE tb_barang SET nama_barang = '". $data['nama_barang'] ."', harga = '". $data['harga'] ."', kd_kategori = '" .$data['kd_kategori']. "' WHERE kd_barang= '" .$kd_barang['kd_barang']. "'";
 		$this->db->query($sql);
 		return $this->db->affected_rows();
 	}

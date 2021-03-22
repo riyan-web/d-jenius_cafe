@@ -4,105 +4,135 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Kategori extends CI_Controller
 {
 
-	public function __construct()
-	{
+	public function __construct() 	{
 		parent::__construct();
 		cek_akses();
-		$this->load->model('kategori_model', 'kategori');
+		$this->load->library('Template');
+		$this->load->helper('myadmin');
+		$this->load->model('M_kategori', 'kategori');
+	}
+	
+
+	public function index(){ 
+		$data['page'] 			= "kategori";
+		$data['judul'] 			= "Kategori";
+		$data['deskripsi'] 		= "Panel";
+		$data['pagae']	= "kategori";
+		$data['modal_kategori'] = show_my_modal('_modal/mdl_kategori', 'kategori', $data);
+			
+		$this->template->views('V_kategori', $data);
 	}
 
-	public function index()
-	{ 
-		$data['tab2'] = true;
-		$data['judul'] = "Data Kategori - D`jenius Cafe";
-		$this->load->view('template/header', $data);
-		$this->load->view('template/navbar', $data);
-		$this->load->view('masterdata/kategori');
-		$this->load->view('_js/js_kategori');
-		$this->load->view('_modal/modal_kategori');
-		$this->load->view('template/footer');
-	}
-	public function kategori_list()
-	{
-		$list = $this->kategori->get_datatables();
-		$data = array();
-		$no = $_POST['start'];
-		$n = 1;
-		foreach ($list as $dataKategori) {
-			$no++;
-			$row = array();
-			$row[] = $n++;
-			$row[] = $dataKategori->nama_kategori;
+	public function kategori_list() {
+		$requestData	= $_REQUEST;
+		$fetch			= $this->kategori->kategori_data($requestData['search']['value'], $requestData['order'][0]['column'], $requestData['order'][0]['dir'], $requestData['start'], $requestData['length']);
+		$totalData		= $fetch['totalData'];
+		$totalFiltered	= $fetch['totalFiltered'];
+		$query			= $fetch['query'];
 
-			//add html for action
-			$row[] = '<a class="btn btn-xs btn-warning" href="javascript:void(0)" title="Edit" onclick="edit_kategori(' . "'" . $dataKategori->kd_kategori . "'" . ')"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-				  <a class="btn btn-xs btn-danger" href="javascript:void(0)" title="Hapus" onclick="delete_kategori(' . "'" . $dataKategori->kd_kategori . "'" . ')"><i class="glyphicon glyphicon-trash"></i> hapus</a>
-				  <a class="btn btn-xs btn-info" href="javascript:void(0)" title="Detail" onclick="detail_kategori(' . "'" . $dataKategori->kd_kategori . "'" . ')"><i class="glyphicon glyphicon-info-sign"></i> Detail</a>';
+		$data	= array();
+		foreach($query->result_array() as $row)
+		{ 
+			$datanya = array(); 
 
-			$data[] = $row;
+			$datanya[]	= $row['nomora'];
+			$datanya[]	= $row['nama_kategori'];	
+			$datanya[] = '<a class="btn btn-xs btn-success" href="javascript:void(0)" title="Ubah" onclick="kategori_ubah('."'".$row['kd_kategori']."'".')"><i class="fa fa-edit"> </i> Ubah</a>
+				  <button class="btn btn-danger btn-xs konfirmasiHapus-kategori" data-id="'.$row['kd_kategori'].'" data-toggle="modal" data-target="#konfirmasiHapus"><i class="glyphicon glyphicon-trash"></i> Hapus</button>';
+
+			$data[] = $datanya;
 		}
 
-		$output = array(
-			"draw" => $_POST['draw'],
-			"recordsTotal" => $this->kategori->count_all(),
-			"recordsFiltered" => $this->kategori->count_filtered(),
-			"data" => $data,
-		);
-		//output to json format
-		echo json_encode($output);
+		$json_data = array(
+			"draw"            => intval( $requestData['draw'] ),  
+			"recordsTotal"    => intval( $totalData ),  
+			"recordsFiltered" => intval( $totalFiltered ), 
+			"data"            => $data
+			);
+
+		echo json_encode($json_data);
 	}
-	public function kategori_edit($kd_kategori)
-	{
-		$data = $this->kategori->get_by_id($kd_kategori);
+
+	public function kategori_tambah() {
+		$this->form_validation->set_rules('nama_kategori', 'nama_kategori', 'required');
+
+		
+		if ($this->form_validation->run() == TRUE) {
+			$cekNama = $this->kategori->nama_cek($this->input->post('nama_kategori'));
+			if ($cekNama > 0) {
+				$out['status'] = 'form';
+				$out['msg'] = show_err_msg('Nama Kategori Sudah di <b>Pakai</b> atau <b>Terdaftar.</b>');
+			}else {
+				$data = array(
+					'nama_kategori' => $this->input->post('nama_kategori'),
+				);
+				$result = $this->kategori->kategori_tambah($data);
+
+				if ($result > 0) {
+					$out['status'] = '';
+					$out['msg'] = show_succ_msg('Data Kategori Berhasil ditambahkan', '20px');
+				} else {
+					$out['status'] = '';
+					$out['msg'] = show_err_msg('Data Kategori Gagal ditambahkan', '20px');
+				}
+			}
+		} else {
+			$out['status'] = 'form';
+			$out['msg'] = show_err_msg(validation_errors());
+		}
+
+		echo json_encode($out);
+	}
+
+	public function kategori_ubah($kd_kategori) {
+		$data = $this->kategori->kategori_by_id($kd_kategori);
 		echo json_encode($data);
 	}
 
-	public function kategori_add()
-	{
-		$this->_validate();
+	public function kategori_proses_ubah() {
+		$this->form_validation->set_rules('nama_kategori', 'nama_kategori', 'required');
+		
+		$cekNama = $this->kategori->nama_cek($this->input->post('nama_kategori'));
+		$kdKat = $this->input->post('kd_kategori');
+		$Namae = $this->kategori->kategori_by_id($kdKat);	
+		
+		if($Namae->nama_kategori != $this->input->post('nama_kategori') && $cekNama > 0) {
+			$out['status'] = 'form';
+		 	$out['msg'] = show_err_msg('Nama Kategori Sudah di <b>Pakai</b> atau <b>Terdaftar.</b>');
+		}else{
+			if ($this->form_validation->run() == TRUE) {
+				$kd_kategori = $this->input->post('kd_kategori');
+				$data = array(
+						'nama_kategori' => $this->input->post('nama_kategori'),
+					);
+				$result = $this->kategori->kategori_ubah($data, $kd_kategori);
 
-		$data = array(
-			'nama_kategori' => $this->input->post('nama_kategori')
-		);
-
-		$insert = $this->kategori->save($data);
-
-		echo json_encode(array("status" => TRUE));
-	}
-
-	public function kategori_update()
-	{
-		$this->_validate();
-		$data = array(
-			'nama_kategori' => $this->input->post('nama_kategori')
-		);
-
-		$this->kategori->update(array('kd_kategori' => $this->input->post('kd_kategori')), $data);
-		echo json_encode(array("status" => TRUE));
-	}
-
-	public function kategori_delete($kd_kategori)
-	{
-		//delete file
-		$this->kategori->delete_by_id($kd_kategori);
-		echo json_encode(array("status" => TRUE));
-	}
-
-	private function _validate()
-	{
-		$data = array();
-		$data['error_string'] = array();
-		$data['inputerror'] = array();
-		$data['status'] = TRUE;
-
-		if ($this->input->post('nama_kategori') == '') {
-			$data['inputerror'][] = 'nama_kategori';
-			$data['error_string'][] = 'Nama Kategori wajib diisi lur';
-			$data['status'] = FALSE;
+				if ($result > 0) {
+					$out['status'] = '';
+					$out['msg'] = show_succ_msg('Data Kategori Berhasil diubah', '20px');
+				} else {
+					$out['status'] = '';
+					$out['msg'] = show_succ_msg('Data Kategori Gagal diubah', '20px');
+				}
+			} else {
+				$out['status'] = 'form';
+				$out['msg'] = show_err_msg(validation_errors());
+			}
 		}
-		if ($data['status'] === FALSE) {
-			echo json_encode($data);
-			exit();
+			
+		echo json_encode($out);
+	}
+
+	public function kategori_hapus() {
+		$kd_kategori = $_POST['kd_ketegori'];
+		$result = $this->kategori->kategori_hapus($kd_kategori);
+
+		if ($result > 0) {
+			echo show_succ_msg('Data kategori Berhasil dihapus', '20px');
+		} else {
+			echo show_err_msg('Data kategori Gagal dihapus', '20px');
 		}
 	}
+	// tutup kategori
+	
 }
