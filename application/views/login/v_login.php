@@ -71,6 +71,9 @@
                             Login
                         </button>
                     </div>
+                    <div class="text-center p-t-5 p-b-20">
+                        <a class="txt1" href="<?= base_url('home') ?>">Kembali</a>
+                    </div>
                 </form>
             </div>
         </div>

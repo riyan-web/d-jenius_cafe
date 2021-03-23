@@ -9,24 +9,19 @@
                             <nav>
                                 <?php $role_id = $this->session->userdata('role_id'); ?>
                                 <ul id="navigation">
-                                    <li><a <?php if (isset($tab1)) echo 'class="active"'; ?> href="<?= base_url('home') ?>">Home</a></li>
-                                    <li><a <?php if (isset($tab2)) echo 'class="active"'; ?> href="#">Master Data<i class="ti-angle-down"></i></a>
+                                    <li><a <?php if (isset($tab1)) echo 'class="active"'; ?> href="<?= base_url('home') ?>">Home </a></li>
+                                    <li><a <?php if (isset($tab3)) echo 'class="active"'; ?> href="<?= base_url('Penjualan') ?>">Profile </a></li>
+                                    <li><a <?php if (isset($tab2)) echo 'class="active"'; ?> href="#">Our Menu <i class="ti-angle-down"></i></a>
                                         <ul class="submenu">
-                                            <li><a href="<?= base_url('Barang') ?>">Data Menu</a></li>
-                                            <li><a href="<?= base_url('kategori') ?>">Data Kategori</a></li>
+                                            <li><a href="<?= base_url('Barang') ?>">Food </a></li>
+                                            <li><a href="<?= base_url('kategori') ?>">Drinks </a></li>
+                                            <li><a href="<?= base_url('Barang') ?>">Snack </a></li>
+                                            <li><a href="<?= base_url('Barang') ?>">Barista </a></li>
+                                            <li><a href="<?= base_url('Barang') ?>">Shisa </a></li>
                                         </ul>
                                     </li>
-                                    <li><a <?php if (isset($tab3)) echo 'class="active"'; ?> href="<?= base_url('Penjualan') ?>">Penjualan </a></li>
-                                    <li><a <?php if (isset($tab4)) echo 'class="active"'; ?> href="<?= base_url('Pengeluaran') ?>">Pengeluaran</a></li>
-                                    <?php if ($role_id == 1) { ?>
-                                        <li><a <?php if (isset($tab5)) echo 'class="active"'; ?> href="#">Laporan <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="<?= base_url('laporan/penjualan') ?>">Laporan Penjualan</a></li>
-                                                <li><a href="<?= base_url('laporan/pengeluaran') ?>">Laporan Pengeluaran</a></li>
-                                                <li><a href="<?= base_url('laporan/labarugi') ?>">Laporan Laba Rugi</a></li>
-                                            </ul>
-                                        </li>
-                                    <?php } ?>
+                                    <li><a <?php if (isset($tab3)) echo 'class="active"'; ?> href="<?= base_url('Penjualan') ?>">Gallery </a></li>
+                                    <li><a <?php if (isset($tab4)) echo 'class="active"'; ?> href="<?= base_url('Pengeluaran') ?>">Contact </a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -43,8 +38,8 @@
                             <div class="socail_links">
                                 <ul>
                                     <li>
-                                        <a href="<?= base_url('login/logout'); ?>">
-                                            <i class="fa fa-sign-out">Logout</i>
+                                        <a href="<?= base_url('Login'); ?>">
+                                            <i class="fa fa-sign-out">Login</i>
                                         </a>
                                     </li>
                                     <li>

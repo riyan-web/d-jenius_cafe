@@ -6,7 +6,6 @@ class Home extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		cek_akses();
 		$this->load->model('Barang_model');
 	}
 
