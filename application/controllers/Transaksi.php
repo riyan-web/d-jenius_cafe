@@ -56,6 +56,7 @@
 		{
 			$nomor_nota 	= $this->input->get('kd_transaksi');
 			$tanggal		= $this->input->get('tanggal');
+			$nome			= $this->input->get('nomeja');
 			$cash			= $this->input->get('cash');
 			$catatan		= $this->input->get('catatan');
 			$grand_total	= $this->input->get('grand_total');
@@ -70,6 +71,9 @@
 			$pdf->Ln();
 			$pdf->Cell(25, 4, 'Tanggal', 0, 0, 'L');
 			$pdf->Cell(85, 4, date('d-M-Y ', strtotime($tanggal)), 0, 0, 'L');
+			$pdf->Ln();
+			$pdf->Cell(25, 4, 'NO Meja', 0, 0, 'L');
+			$pdf->Cell(85, 4, $nome, 0, 0, 'L');
 			$pdf->Ln();
 
 			$pdf->Cell(130, 5, '-----------------------------------------------------------------------------------------------------------', 0, 0, 'L');
@@ -164,6 +168,7 @@
 
 						$this->form_validation->set_rules('cash', 'Total Bayar', 'trim|numeric|required|max_length[17]');
 						$this->form_validation->set_rules('catatan', 'Catatan', 'trim|max_length[1000]');
+						$this->form_validation->set_rules('nomeja', 'NO meja', 'required');
 
 						$this->form_validation->set_message('required', '%s harus diisi');
 						$this->form_validation->set_message('cek_kode_barang', '%s tidak ditemukan');
@@ -174,14 +179,16 @@
 						if ($this->form_validation->run() == TRUE) {
 							$kd_transaksi 	= $this->input->post('kd_transaksi');
 							$tanggal		= $this->input->post('tanggal');
+							$nomeja			= $this->input->post('nomeja');
 							$bayar			= $this->input->post('cash');
+							$jumlah_total			= array_sum($_POST['jumlah_beli']);
 							$grand_total	= $this->input->post('grand_total');
 							$catatan		= $this->clean_tag_input($this->input->post('catatan'));
 
 							if ($bayar < $grand_total) {
 								$this->query_error("Jumlah Bayar atau Cash Kurang");
 							} else {
-								$master = $this->transaksi->tambah_transaksi($kd_transaksi, $tanggal, $grand_total, $bayar, $catatan);
+								$master = $this->transaksi->tambah_transaksi($kd_transaksi, $tanggal, $jumlah_total, $grand_total, $bayar, $catatan, $nomeja);
 								if ($master) {
 									// $id_master 	= $this->m_penjualan_master->get_id($kd_transaksi)->row()->kd_transaksi;
 									// $inserted	= 0;
@@ -199,7 +206,7 @@
 									}
 
 									if ($no_array > 0) {
-										echo json_encode(array('status' => 1, 'pesan' => "Transaksi berhasil disimpan !"));
+										echo json_encode(array('status' => 1, 'pesan' => "Transaksi berhasil disimpan !".$jumlah_total));
 									} else {
 										$this->query_error();
 									}

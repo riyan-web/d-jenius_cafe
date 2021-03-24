@@ -30,11 +30,10 @@
         </a>
       </li>
       <li <?php if ($page == 'kategori') {echo 'class="active"';} ?>>
-        <a href="<?= base_url('barang');?>">
+        <a href="<?= base_url('kategori');?>">
           <i class="fa fa-tags"></i> <span>Data Kategori Menu</span>
         </a>
       </li>
-
       <li class="header">Transaksi</li>
       <li <?php if ($page == 'pengeluaran') {echo 'class="active"';} ?>>
         <a href="<?= base_url('pengeluaran'); ?>">
@@ -48,7 +47,7 @@
           <span>Penjualan</span>
         </a>
       </li>
-            
+      <?php if ($_SESSION['role_id'] == 1) :?>     
       <li <?php if ($page == 'laporan') {echo 'class="treeview active"';} ?>>
         <a>
           <i class="fa fa-location-arrow"></i>
@@ -74,6 +73,8 @@
           </li>
         </ul>
       </li>
+      <?php endif;?>
+    
       <li class="header">PETUGAS/KARYAWAN</li>
       <li <?php if ($page == 'datapetugas') {echo 'class="active"';} ?>>
         <a href="<?= base_url('admin/petugas'); ?>">

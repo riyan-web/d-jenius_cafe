@@ -95,14 +95,16 @@ class Transaksi_model extends CI_Model {
 		return $this->db->query($sql);
 	}
 
-	public function tambah_transaksi($kd_transaksi, $tanggal, $total_harga, $bayar, $catatan)
+	public function tambah_transaksi($kd_transaksi, $tanggal, $jumlah_total, $total_harga, $bayar, $catatan, $nomeja)
 	{
 		$dt = array(
 			'kd_jual' => $kd_transaksi,
 			'tanggal' => $tanggal,
+			'jumlah_total' => $jumlah_total,
 			'total_harga' => $total_harga,
 			'bayar' => $bayar,
 			'catatan' => $catatan,
+			'nomeja' => $nomeja,
 		);
 
 		return $this->db->insert($this->table, $dt);

@@ -65,4 +65,13 @@ class M_laporan extends CI_Model {
 	public function jumlah_penjualan() {
 		return $this->db->query("SELECT sum(total_harga) as jumlah_semua from ".$this->table2);
 	}
+
+	public function jumlah_pengeluaranbytanggal($tgl_awal, $tgl_akhir) {
+		return $this->db->query("SELECT sum(jumlah) as jumlah_semua from ".$this->table." WHERE tanggal >= '".$tgl_awal."' AND tanggal <= '".$tgl_akhir."'");
+	}
+
+	public function jumlah_penjualanbytanggal($tgl_awal, $tgl_akhir) {
+		return $this->db->query("SELECT sum(total_harga) as jumlah_semua from ".$this->table2." WHERE tanggal >= '".$tgl_awal."' AND tanggal <= '".$tgl_akhir."'");
+	}
+
 }
