@@ -5,15 +5,15 @@
   </a>
   <!-- Navbar Right Menu -->
   <div class="navbar-custom-menu">
-    
+
     <ul class="nav navbar-nav">
       <li class="dropdown messages-menu">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <i class="fa fa-envelope-o"></i>
-            <span class="label label-success">4</span>
+          <i class="fa fa-envelope-o"></i>
+          <span class="label label-success">4</span>
         </a>
         <ul class="dropdown-menu">
-              <li class="header">You have 4 messages</li>
+          <li class="header">You have 4 messages</li>
         </ul>
       </li>
 
@@ -53,12 +53,12 @@
               <a href="<?= base_url('Admin/Profile'); ?>" class="btn btn-default btn-flat">Profile</a>
             </div>
             <div class="pull-right">
-              <a href="<?= base_url('Home/logout'); ?>" class="btn btn-default btn-flat">Keluar</a>
+              <a href="<?= base_url('Login/logout'); ?>" class="btn btn-default btn-flat">Keluar</a>
             </div>
           </li>
         </ul>
       </li>
-      
+
     </ul>
   </div>
 </nav>

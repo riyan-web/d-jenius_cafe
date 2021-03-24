@@ -41,7 +41,7 @@ class Login extends CI_Controller
 					'foto' => $user['foto']
 				];
 				$this->session->set_userdata($data);
-				redirect('home');
+				redirect('dashboard');
 			} else {
 				$this->session->set_flashdata(
 					'message',
