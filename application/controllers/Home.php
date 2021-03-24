@@ -12,13 +12,20 @@ class Home extends CI_Controller
 	public function index()
 	{
 		$data['tab1'] = true;
-		$data['judul'] = "Kedai Happy Memory";
-		$data['user'] = $this->db->get_where('user', ['username' =>
-		$this->session->userdata('username')])->row_array();
-		$data['kategori'] = $this->Barang_model->getAllKategori();
+		$data['judul'] = "Kedai Happy Memory - Home";
 		$this->load->view('template/header', $data);
 		$this->load->view('template/navbar', $data);
 		$this->load->view('home/index', $data);
+		$this->load->view('template/footer');
+	}
+
+	public function profile()
+	{
+		$data['tab2'] = true;
+		$data['judul'] = "Kedai Happy Memory - Profile";
+		$this->load->view('template/header', $data);
+		$this->load->view('template/navbar', $data);
+		$this->load->view('home/profile', $data);
 		$this->load->view('template/footer');
 	}
 

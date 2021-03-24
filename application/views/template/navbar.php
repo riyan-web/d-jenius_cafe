@@ -10,18 +10,18 @@
                                 <?php $role_id = $this->session->userdata('role_id'); ?>
                                 <ul id="navigation">
                                     <li><a <?php if (isset($tab1)) echo 'class="active"'; ?> href="<?= base_url('home') ?>">Home </a></li>
-                                    <li><a <?php if (isset($tab3)) echo 'class="active"'; ?> href="<?= base_url('Penjualan') ?>">Profile </a></li>
-                                    <li><a <?php if (isset($tab2)) echo 'class="active"'; ?> href="#">Our Menu <i class="ti-angle-down"></i></a>
+                                    <li><a <?php if (isset($tab2)) echo 'class="active"'; ?> href="<?= base_url('home/profile') ?>">Profile </a></li>
+                                    <li><a <?php if (isset($tab3)) echo 'class="active"'; ?> href="#">Our Menu <i class="ti-angle-down"></i></a>
                                         <ul class="submenu">
-                                            <li><a href="<?= base_url('Barang') ?>">Food </a></li>
-                                            <li><a href="<?= base_url('kategori') ?>">Drinks </a></li>
-                                            <li><a href="<?= base_url('Barang') ?>">Snack </a></li>
-                                            <li><a href="<?= base_url('Barang') ?>">Barista </a></li>
-                                            <li><a href="<?= base_url('Barang') ?>">Shisa </a></li>
+                                            <li><a href="<?= base_url('menu/food') ?>">Food </a></li>
+                                            <li><a href="<?= base_url('menu/drinks') ?>">Drinks </a></li>
+                                            <li><a href="<?= base_url('menu/snack') ?>">Snack </a></li>
+                                            <li><a href="<?= base_url('menu/barista') ?>">Barista </a></li>
+                                            <li><a href="<?= base_url('menu/shisa') ?>">Shisa </a></li>
                                         </ul>
                                     </li>
-                                    <li><a <?php if (isset($tab3)) echo 'class="active"'; ?> href="<?= base_url('Penjualan') ?>">Gallery </a></li>
-                                    <li><a <?php if (isset($tab4)) echo 'class="active"'; ?> href="<?= base_url('Pengeluaran') ?>">Contact </a></li>
+                                    <li><a <?php if (isset($tab3)) echo 'class="active"'; ?> href="<?= base_url('home/gallery') ?>">Gallery </a></li>
+                                    <li><a <?php if (isset($tab4)) echo 'class="active"'; ?> href="<?= base_url('home/contact') ?>">Contact </a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -43,7 +43,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="https://instagram.com/kedaihappy.memory?igshid=pkj8eofi8me6">
                                             <i class="fa fa-instagram"></i>
                                         </a>
                                     </li>
