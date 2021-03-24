@@ -15,6 +15,11 @@
         <form id="tanggal" method="post">
             <label for="">Tanggal Awal</label> : <input type="text" autocomplete="off" id="tgl_awal" name="tgl_awal" > <label for="">Tanggal Akhir</label> <input type="text" autocomplete="off" id="tgl_akhir" name="tgl_akhir" value="<?= date("d-m-Y") ?>"> <button class="btn-xs btn btn-primary" onclick="tampilkan()"><i class="glyphicon glyphicon-search"></i> Tampilkan</button>
         </form>
+        <?php
+          if(!empty($_POST['tgl_awal'])) {
+            echo "<br><h4>Pengeluaran Dari Tanggal <b>".$_POST['tgl_awal']."</b> Sampai Tanggal <b>".$_POST['tgl_akhir']."</b></h4>";
+          }
+        ?>
     </div>
     </div>
     <div class="form-group"></div>
@@ -47,49 +52,7 @@
   <div class="box-footer">
     Menampilkan daftar Penjualan seluruhnya.
   </div><!-- box-footer -->
-</div>
-<div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">Area Chart</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-            <div style="width: 800px;height: 800px">
-              <canvas id="myChart"></canvas>
-            </div>
-            </div>
-            <!-- /.box-body -->
-          </div>
-  <script>
-		var ctx = document.getElementById("myChart").getContext('2d');
-		var myChart = new Chart(ctx, {
-			type: 'bar',
-			data: {
-				labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-				datasets: [{
-					label: 'Grafik Penjualan',
-					data: ['8', '9', '10', '11', '6', '5', '4'],
-					backgroundColor: 'rgba(255, 99, 132, 0.2)',
-					borderColor: 'rgba(255,99,132,1)',
-					borderWidth: 1
-				}]
-			},
-			options: {
-				scales: {
-					yAxes: [{
-						ticks: {
-							beginAtZero:true
-						}
-					}]
-				}
-			}
-		});
-	</script>
+</div>  
 <script>
 $(document).ready(function(){
         $('#table_pengeluaranall').DataTable({

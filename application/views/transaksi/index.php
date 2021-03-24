@@ -15,6 +15,14 @@
               <label>Tanggal&nbsp;</label>&nbsp;<b>:</b>
               <input style="width: 160px;" name="tanggal" id="tanggal" type="text" readonly value="<?= date("Y/m/d") ?>" required>
             </div>
+            <div class="form-group">
+              <label>No. Meja&nbsp;</label>&nbsp;<b>:</b>
+              <select style="width: 140px;" name="nomeja" id="nomeja">
+              <?php for($i=1; $i<16; $i++) {?>
+                <option value="Meja <?= $i ?>">Meja <?=$i?></option>
+              <?php } ?>
+              </select>
+            </div>
           </div>
         </div>
         <div class="col-lg-9">

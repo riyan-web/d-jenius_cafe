@@ -30,7 +30,7 @@
         </a>
       </li>
       <li <?php if ($page == 'kategori') {echo 'class="active"';} ?>>
-        <a href="<?= base_url('barang');?>">
+        <a href="<?= base_url('kategori');?>">
           <i class="fa fa-tags"></i> <span>Data Kategori Menu</span>
         </a>
       </li>

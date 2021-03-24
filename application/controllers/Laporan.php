@@ -54,8 +54,16 @@
 			$data['deskripsi'] 		= "Panel";
 			$data['pagae']	= "laplabarugi";
 
-			$data['pengeluaran'] = $this->laporan->jumlah_pengeluaran()->row();
-			$data['penjualan'] =  $this->laporan->jumlah_penjualan()->row();
+			if (empty($_POST['tgl_awal'])) {
+				$data['pengeluaran'] = $this->laporan->jumlah_pengeluaran()->row();
+				$data['penjualan'] =  $this->laporan->jumlah_penjualan()->row();
+			}else{
+				$tgl_awal = date("Y-m-d", strtotime($this->input->post('tgl_awal')));
+				$tgl_akhir = date("Y-m-d", strtotime($this->input->post('tgl_akhir')));
+				$data['pengeluaran'] = $this->laporan->jumlah_pengeluaranbytanggal($tgl_awal, $tgl_akhir)->row();
+				$data['penjualan'] =  $this->laporan->jumlah_penjualanbytanggal($tgl_awal, $tgl_akhir)->row();
+			}
+
 
 			$this->template->views('V_laplabarugi', $data);
 		}		

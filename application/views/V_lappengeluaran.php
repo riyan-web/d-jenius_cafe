@@ -15,6 +15,11 @@
         <form id="tanggal" method="post">
             <label for="">Tanggal Awal</label> : <input type="text" autocomplete="off" id="tgl_awal" name="tgl_awal" > <label for="">Tanggal Akhir</label> <input type="text" autocomplete="off" id="tgl_akhir" name="tgl_akhir" value="<?= date("d-m-Y") ?>"> <button class="btn-xs btn btn-primary" onclick="tampilkan()"><i class="glyphicon glyphicon-search"></i> Tampilkan</button>
         </form>
+        <?php
+          if(!empty($_POST['tgl_awal'])) {
+            echo "<br>Pengeluaran Dari Tanggal <b>".$_POST['tgl_awal']."</b> Sampai Tanggal <b>".$_POST['tgl_akhir']."</b>";
+          }
+        ?>
     </div>
     </div>
     <div class="form-group"></div>

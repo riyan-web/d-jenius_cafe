@@ -338,6 +338,7 @@
             {
                 var FormData = "kd_transaksi="+encodeURI($('#kd_transaksi').val());
                 FormData += "&tanggal="+encodeURI($('#tanggal').val());
+                FormData += "&nomeja="+encodeURI($('#nomeja').val());
                 FormData += "&" + $('#TabelTransaksi tbody input').serialize();
                 FormData += "&cash="+$('#UangCash').val();
                 FormData += "&catatan="+encodeURI($('#catatan').val());
@@ -384,6 +385,7 @@
     {
         var FormData = "kd_transaksi="+encodeURI($('#kd_transaksi').val());
         FormData += "&tanggal="+encodeURI($('#tanggal').val());
+        FormData += "&nomeja="+encodeURI($('#nomeja').val());
         FormData += "&" + $('#TabelTransaksi tbody input').serialize();
         FormData += "&cash="+$('#UangCash').val();
         FormData += "&catatan="+encodeURI($('#catatan').val());
