@@ -17,6 +17,7 @@
 
     <!-- Sidebar Menu -->
     <ul class="sidebar-menu">
+    <?php if ($_SESSION['role_id'] == 1 || $_SESSION['role_id'] == 2): ?>
       <li class="header">Home</li>
          <li <?php if ($page == 'dashboard') {echo 'class="active"';} ?>>
           <a href="<?= base_url('dashboard');?>">
@@ -73,15 +74,17 @@
           </li>
         </ul>
       </li>
-      <?php endif;?>
+      
     
       <li class="header">PETUGAS/KARYAWAN</li>
       <li <?php if ($page == 'datapetugas') {echo 'class="active"';} ?>>
-        <a href="<?= base_url('admin/petugas'); ?>">
+        <a href="<?= base_url('petugas'); ?>">
           <i class="fa fa-user-plus"></i>
           <span>Petugas</span>
         </a>
       </li>
+        <?php endif;?>
+      <?php endif;?>
     </ul>
     <!-- /.sidebar-menu -->
   </section>

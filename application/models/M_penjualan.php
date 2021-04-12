@@ -68,4 +68,9 @@ class M_penjualan extends CI_model {
 		$this->db->delete($this->table, array('kd_operasional' => $kd_pengeluaran));
 		return $this->db->affected_rows();
 	}
+
+	public function jumlah_now() {
+		return $this->db->query("SELECT sum(jumlah_total) as jumlah_semua, sum(total_harga) as total  from ".$this->table." where tanggal = '".date('Y-m-d')."'");
+	}
+
 }

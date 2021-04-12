@@ -41,7 +41,7 @@
     </div>
   </div>
   <div class="box-footer">
-    Menampilkan daftar Laba Rugi klik tombol pada kolom pilihan.
+    Menampilkan data Laba Rugi.
   </div><!-- box-footer -->
 </div>
 

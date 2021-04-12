@@ -41,7 +41,11 @@ class Login extends CI_Controller
 					'foto' => $user['foto']
 				];
 				$this->session->set_userdata($data);
-				redirect('dashboard');
+				if ($user['role_id'] == 3 ){
+					redirect('admin');
+				}else{
+					redirect('dashboard');
+				}
 			} else {
 				$this->session->set_flashdata(
 					'message',

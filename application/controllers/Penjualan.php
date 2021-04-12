@@ -20,6 +20,9 @@ class Penjualan extends CI_Controller
 		$data['deskripsi'] 		= "Panel";
 		$data['pagae']	= "penjualan";
 
+		$data['data_penjualan']	= $this->penjualan->jumlah_now()->row();
+
+
 		// $data['modal_penjualan'] = show_my_modal('_modal/mdl_penjualan', 'penjualan', $data);
 		$this->template->views('V_penjualan', $data);
 	}

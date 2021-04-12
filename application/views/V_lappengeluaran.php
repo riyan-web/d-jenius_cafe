@@ -50,7 +50,7 @@
     </table>
   </div>
   <div class="box-footer">
-    Menampilkan daftar Pengeluaran, mengedit dan menghapus. klik tombol pada kolom pilihan.
+    Menampilkan daftar Pengeluaran, Detail pengeluaran. klik tombol pada kolom pilihan.
   </div><!-- box-footer -->
 </div>
 <script>

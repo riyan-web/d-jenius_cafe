@@ -88,10 +88,48 @@ $(document).ready(function() {
   });
   function penjualan_cek()
   {
-      save_method = 'tambahPengeluaran';
-      $('#form-pengeluaran')[0].reset(); 
-      $('#pengeluaran').modal('show');
+      save_method = 'cekPenjualan';
+      $('#form-penjualan')[0].reset(); 
+      $('#penjualan').modal('show');
       $('.form-msg').html('');
-      $('.modal-title').text('Tambah Data Pengeluaran Baru'); 
   }
   </script>
+
+<div class="modal fade" id="penjualan" role="dialog">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<div class="col-md-offset-1 col-md-10 col-md-offset-1 well">
+        <div class="form-msg"></div>
+        <button type="button" class="close btn-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 style="display:block; text-align:center;" class="modal-title">Hasil Penjualan Hari ini </b></h3>
+        <br>
+        <form id="form-penjualan" method="POST">
+          <div class="form-group row">
+            <label for="jumlah"  class="col-md-4">Tanggal</label>
+            <div class="col-md-5">
+              <b><?=date('d F Y, h:i:s')?>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="total"  class="col-md-4 control-label">Jumlah Terjual</label>
+            <div class="col-md-8">
+            <?= $data_penjualan->jumlah_semua; ?>&nbsp;<label> buah</label>
+            </div>
+            
+          </div>
+          <div class="form-group row">
+            <label for="total"  class="col-md-4 control-label">Total Penjualan </label>
+            <div class="col-md-8">
+            <?= "Rp " . number_format($data_penjualan->total, 2, ",", "."); ?>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-12">
+              <button type="button" class="form-control btn btn-danger" data-dismiss="modal" aria-label="Close">Tutup</button>
+            </div>
+          </div>
+        </form>
+      </div>
+		</div>
+	</div>
+</div>

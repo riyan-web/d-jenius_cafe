@@ -50,7 +50,7 @@
     </table>
   </div>
   <div class="box-footer">
-    Menampilkan daftar Penjualan seluruhnya.
+    Menampilkan daftar Penjualan seluruhnya, Detail transaksi. klik tombol pada kolom pilihan.
   </div><!-- box-footer -->
 </div>  
 <script>
