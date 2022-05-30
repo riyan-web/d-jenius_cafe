@@ -1,29 +1,23 @@
 ###################
-What is CodeIgniter
+Alur pemasangan aplikasi di komputer sendiri(work flow sederhana)
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+ini adalah fitur untuk membantu orang dalam memahammi susunan projek ini dan menginstall kedalam localhost miliknya sendiri
 
 *******************
-Release Information
+Struktur file/folder :
 *******************
+* application : berisi file file codingan yang akan dirubah sesuai keinginan kita.
+* public: folder yang berisi aset aset yang digunakan pada aplikasi .
+* system: ini merupakan otak dari system codeigniter, file default yang tidak boleh dirubah sedikitpun.
+* upload : folder yang berisi uploadan image image
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
 
 **************************
-Changelog and New Features
+cara instal lewat website langusng dari github
 **************************
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+<img src="https://d3vv6lp55qjaqc.cloudfront.net/items/353A3p3Y2x3c2t2N0c01/Image%202019-08-27%20at%203.25.07%20PM.png" max-width="75%"/>
 
 *******************
 Server Requirements
